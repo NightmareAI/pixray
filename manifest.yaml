@@ -14,7 +14,7 @@ spec:
         app: pixray-dreamer
       annotations:
         dapr.io/enabled: "true"
-        dapr.io/app-name: "pixray-dreamer-gcr"
+        dapr.io/app-id: "pixray-dreamer-gcr"
         dapr.io/app-protocol: "grpc"
         dapr.io/app-port: "50055"
         dapr.io/app-max-concurrency: "1"
