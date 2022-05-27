@@ -53,3 +53,9 @@ timm
 
 # resmem loss
 resmem
+
+# nightmarebot
+dapr
+dapr.ext.grpc
+minio
+cloudevents
