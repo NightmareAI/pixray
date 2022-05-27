@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pixray-dreamer
+  labels:
+    app: pixray-dreamer
+spec:
+  selector:
+    matchLabels:
+      app: pixray-dreamer
+  template:
+    metadata:
+      labels:
+        app: pixray-dreamer
+      annotations:
+        dapr.io/enabled: "true"
+        dapr.io/app-name: "pixray-dreamer-gcr"
+        dapr.io/app-protocol: "grpc"
+        dapr.io/app-port: "50055"
+        dapr.io/app-max-concurrency: "1"
+        dapr.io/log-level: "debug"
+    spec:
+      containers:
+      - image: us-west1-docker.pkg.dev/nightmarebot-ai/nightmarebot/pixray-dreamer:latest
+        imagePullPolicy: Always
+        name: pixray-dreamer
+        ports:
+        - containerPort: 50055
+
