@@ -4,8 +4,9 @@ import os
 import sys
 
 def main(argv):
-  os.makedirs('/tmp/pixray')
-  request_settings = yaml.safe_load(sys.argv[0])
+  with open('/tmp/pixray/input.yaml', 'r') as config:
+    request_settings = yaml.safe_load(config)
+
   pixray.reset_settings()
   pixray.add_settings(**request_settings)
   pixray.add_settings(outdir='/tmp/pixray')
