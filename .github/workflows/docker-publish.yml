@@ -54,7 +54,7 @@ jobs:
         run: |
           wget -O ./cog https://github.com/replicate/cog/releases/download/v0.3.8/cog_Linux_x86_64
           chmod 755 ./cog
-          cog build -t pixray
+          ./cog build -t pixray
 
       # Login against a Docker registry except on PR
       # https://github.com/docker/login-action
